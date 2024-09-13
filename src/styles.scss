@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/utils/variables';
+@import './styles/utils/mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    max-width: 1440px;
+    min-height: 100vh;
+    margin: auto;
+    font-family: $primary-font;
+}
+
+main {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 32px;
+    animation: opacity-appear 1500ms;
+
+    @include mobile-only {
+        padding: 16px;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: $primary-color;
+    font-weight: 700;
+    font-size: 36px;
+    padding-bottom: 16px;
+
+    @include mobile-only {
+        font-size: 24px;
+    }
+}
+
+p {
+    font-size: 24px;
+
+    @include tablet-and-less {
+        font-size: 18px;
+    }
+
+    @include mobile-only {
+        font-size: 13px;
+    }
+}
