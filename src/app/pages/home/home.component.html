@@ -2,5 +2,20 @@
     <h1>Olympic games app</h1>
     <p>Ceci est la page Home</p>
     <hr />
+
+    @if ((olympics$ | async)?.length) {
     <p>{{ (olympics$ | async)?.length }} data loaded</p>
+    @for (olympic of (olympics$ | async); track olympic.id;) {
+    <li>
+        {{olympic.name}}
+    </li>
+    @for (part of olympic.participations; track part.id) {
+        <span>{{part.city}}</span>
+    }
+    }
+    }
+    
+    @else {
+    <p>Nous sommes désolés : il y a une erreur dans le chargement des données...</p>
+    }
 </main>
