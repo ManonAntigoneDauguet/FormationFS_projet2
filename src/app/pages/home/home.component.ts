@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { Country } from 'src/app/core/models/Country';
 import { OlympicService } from 'src/app/core/services/olympic.service';
+
 
 @Component({
   selector: 'app-home',
@@ -8,11 +10,24 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  public olympics$: Observable<any> = of(null);
+  public olympics?: Country[];
+  subscription!: Subscription;
 
   constructor(private olympicService: OlympicService) {}
 
   ngOnInit(): void {
-    this.olympics$ = this.olympicService.getOlympics();
+    this.olympicService.getOlympics().subscribe(
+      {
+        next: (data) => this.olympics = data,
+        error: (e) => console.error(e),
+        complete: () => console.info('complete')
+      }
+    );
+  }
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }

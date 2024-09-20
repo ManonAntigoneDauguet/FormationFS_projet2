@@ -1,4 +1,10 @@
 <main>
-    <h1>Olympic games app</h1>
-    <p>Ceci est la page détail</p>
+    @if (countryData) {
+    <h1>{{countryData.name}}</h1>
+    <app-details-of-country [data]="countryData"></app-details-of-country>
+    }
+
+    @else {
+    <p>We're sorry: there was an error loading the data...</p>
+    }
 </main>
