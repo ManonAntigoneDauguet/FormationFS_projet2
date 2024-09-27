@@ -1,31 +1,22 @@
-(projet en cours)
+# OlympicGames
 
-# OlympicGamesStarter
+Welcome to this application supported by TéléSport !  
+See the results resume of the previous olympics games et prepare to the next !
+
+## How to Install and Run the Project in a dev mode
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
 
-Don't forget to install your node_modules before starting (`npm install`).
+The `npm install` command will allow you to install dependencies.  
+The `ng serve` command will allow to run the app in the development mode.  
+Navigate to `http://localhost:4200/`.
 
-## Development server
+## How to Build the Project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The `ng build` command will allow you to build the app for production to the `dist/` directory.
 
-## Build
+## Architecture
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Where to start
-
-As you can see, an architecture has already been defined for the project. It is just a suggestion, you can choose to use your own. The predefined architecture includes (in addition to the default angular architecture) the following:
-
-- `components` folder: contains every reusable components
-- `pages` folder: contains components used for routing
-- `core` folder: contains the business logic (`services` and `models` folders)
-
-I suggest you to start by understanding this starter code. Pay an extra attention to the `app-routing.module.ts` and the `olympic.service.ts`.
-
-Once mastered, you should continue by creating the typescript interfaces inside the `models` folder. As you can see I already created two files corresponding to the data included inside the `olympic.json`. With your interfaces, improve the code by replacing every `any` by the corresponding interface.
-
-You're now ready to implement the requested features.
-
-Good luck!
+- `core` folder: contains the business logic (`services` and `models` folders) and the shared layouts `components` (as header).
+- `components` folder: contains components (as the graphics of the application).
+- `pages` folder: contains components used for routing and the layout of the pages.

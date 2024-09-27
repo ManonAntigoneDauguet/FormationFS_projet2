@@ -1,0 +1,14 @@
+<header>
+    <div class="header__content">
+        <span class="header__logo">Olympic games app</span>
+        <nav>
+            @for (navLink of navLinks; track navLink.id;) {
+            <a routerLink="{{ navLink.path }}" class="navLink" routerLinkActive="currentPage"
+                [routerLinkActiveOptions]="{ exact: true }" attr.aria-label="{{ navLink.name }}"
+                ariaCurrentWhenActive="page">
+                {{navLink.name}}
+            </a>
+            }
+        </nav>
+    </div>
+</header>

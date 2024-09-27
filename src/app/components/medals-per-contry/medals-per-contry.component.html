@@ -1,0 +1,23 @@
+<section>
+    <div class="graphTagsContainer">
+        <div class="graphTag">
+            <p class="graphTag__label">Number of JOs</p>
+            <p class="graphTag__value">{{ numberOfJOs }}</p>
+        </div>
+        <div class="graphTag">
+            <p class="graphTag__label">Number of countries</p>
+            <p class="graphTag__value">{{ numberOfCountries }}</p>
+        </div>
+    </div>
+
+    <div class="graphContainer graphContainer--medals">
+        <ngx-charts-pie-chart
+            [scheme]="colorScheme"
+            [results]="data"
+            [gradient]="gradient"
+            [labels]="showLabels"
+            (select)="onSelect($event.name)"
+        >
+        </ngx-charts-pie-chart>        
+    </div>
+</section>

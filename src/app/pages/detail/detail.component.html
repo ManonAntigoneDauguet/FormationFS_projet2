@@ -1,0 +1,10 @@
+<main>
+    @if (countryData) {
+    <h1>{{countryData.name}}</h1>
+    <app-details-of-country [data]="countryData"></app-details-of-country>
+    }
+
+    @else {
+    <p>We're sorry: there was an error loading the data...</p>
+    }
+</main>

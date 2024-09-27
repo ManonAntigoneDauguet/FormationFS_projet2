@@ -1,3 +1,11 @@
-<h2>Olympic games app</h2>
-<hr />
-<p>{{ (olympics$ | async)?.length }} data loaded</p>
+<main>
+    <h1>Medals per Country</h1>
+
+    @if (olympics?.length) {
+    <app-medals-per-contry [data]="olympics"></app-medals-per-contry>
+    }
+    
+    @else {
+    <p>We're sorry: there was an error loading the data...</p>
+    }
+</main>
