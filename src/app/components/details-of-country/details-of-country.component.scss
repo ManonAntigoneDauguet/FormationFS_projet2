@@ -1,0 +1,12 @@
+@import '../../../styles/utils/variables';
+@import '../../../styles/utils/mixins';
+
+
+.graphContainer--details {
+
+    @include mobile-only {
+        position: relative;
+        right: 32px;
+        top: 16px;
+    }
+}

@@ -1,0 +1,11 @@
+@import '../../../styles/utils/variables';
+@import '../../../styles/utils/mixins';
+
+
+.graphContainer--medals {
+
+    @include mobile-only {
+        position: relative;
+        bottom: 48px;
+    }
+}

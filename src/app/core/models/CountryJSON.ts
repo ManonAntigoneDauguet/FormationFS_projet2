@@ -1,10 +1,7 @@
 import { Participation } from "./Participation";
 
-export class CountryJSON {
-
-    constructor(
-        public id: number,
-        public country: string,
-        public participations: Array<Participation>
-    ) { }
+export interface CountryJSON {
+    id: number,
+    country: string,
+    participations: Participation[]
 }

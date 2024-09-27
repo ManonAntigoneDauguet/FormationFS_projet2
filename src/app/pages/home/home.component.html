@@ -1,21 +1,11 @@
 <main>
-    <h1>Olympic games app</h1>
-    <p>Ceci est la page Home</p>
-    <hr />
+    <h1>Medals per Country</h1>
 
-    @if ((olympics$ | async)?.length) {
-    <p>{{ (olympics$ | async)?.length }} data loaded</p>
-    @for (olympic of (olympics$ | async); track olympic.id;) {
-    <li>
-        {{olympic.name}}
-    </li>
-    @for (part of olympic.participations; track part.id) {
-        <span>{{part.city}}</span>
-    }
-    }
+    @if (olympics?.length) {
+    <app-medals-per-contry [data]="olympics"></app-medals-per-contry>
     }
     
     @else {
-    <p>Nous sommes désolés : il y a une erreur dans le chargement des données...</p>
+    <p>We're sorry: there was an error loading the data...</p>
     }
 </main>

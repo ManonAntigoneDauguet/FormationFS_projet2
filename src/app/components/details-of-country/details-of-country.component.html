@@ -1,0 +1,30 @@
+<section>
+    <div class="graphTagsContainer">
+        <div class="graphTag">
+            <p class="graphTag__label">Number of entries</p>
+            <p class="graphTag__value">{{ numberOfEntries }}</p>
+        </div>
+        <div class="graphTag">
+            <p class="graphTag__label">Total number medals</p>
+            <p class="graphTag__value">{{ totalMedals }}</p>
+        </div>
+        <div class="graphTag">
+            <p class="graphTag__label">Total number of athletes</p>
+            <p class="graphTag__value">{{ numberOfAthletes }}</p>
+        </div>
+    </div>
+
+    <div class="graphContainer graphContainer--details">
+        <ngx-charts-line-chart
+            [legend]="legend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxis]="xAxis"
+            [yAxis]="yAxis"
+            [xAxisLabel]="xAxisLabel"
+            [yScaleMin]="yScaleMin"
+            [results]="[data]"
+        >
+        </ngx-charts-line-chart>
+    </div>
+</section>
