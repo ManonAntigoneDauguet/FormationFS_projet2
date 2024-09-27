@@ -16,11 +16,10 @@ export class HomeComponent implements OnInit {
   constructor(private olympicService: OlympicService) {}
 
   ngOnInit(): void {
-    this.olympicService.getOlympics().subscribe(
+    this.subscription = this.olympicService.getOlympics().subscribe(
       {
         next: (data) => this.olympics = data,
-        error: (e) => console.error(e),
-        complete: () => console.info('complete')
+        error: (e) => console.error(e)
       }
     );
   }
