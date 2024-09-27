@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, EMPTY, Observable, throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Country } from '../models/Country';
 import { CountryJSON } from '../models/CountryJSON';
@@ -37,7 +37,7 @@ export class OlympicService {
       )),
       tap((value) => this.countriesSubject.next(value)),
       catchError(() => {
-        throw new Error(`Error loading data`);
+        return EMPTY
       })
     );
   }
@@ -84,7 +84,7 @@ export class OlympicService {
       }),
       tap((value) => this.countrySubject.next(value)),
       catchError(() => {
-        throw new Error(`Error loading data`);
+        return EMPTY;
       })
     )
   }

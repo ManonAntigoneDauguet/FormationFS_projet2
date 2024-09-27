@@ -18,11 +18,10 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
     const countryName = this.route.snapshot.params['name'];
-    this.olympicService.getCountryDetail(countryName).subscribe(
+    this.subscription = this.olympicService.getCountryDetail(countryName).subscribe(
       {
         next: (data) => this.countryData = data,
-        error: (e) => console.error(e),
-        complete: () => console.info('complete')
+        error: (e) => console.error(e)
       }
     );
   }
